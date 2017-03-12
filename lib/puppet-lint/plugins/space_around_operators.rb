@@ -1,7 +1,4 @@
-# Public: Test the manifest tokens for variables that contain a dash and
-# record a warning for each instance found.
-#
-# No style guide reference
+# Checks that operators have space around them
 PuppetLint.new_check(:space_around_operators) do
   OPERATORS = %i(EQUALS ISEQUAL NOTEQUAL MATCH APPENDS PLUS GREATEREQUAL
                  LESSEQUAL GREATERTHAN LESSTHAN NOMATCH).freeze
