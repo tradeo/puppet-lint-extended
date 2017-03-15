@@ -2,7 +2,7 @@
 PuppetLint.new_check(:space_after_comma) do
   def check
     tokens.select { |r| r.type == :COMMA }.each do |token|
-      if token.next_token && !whitespace?(token.next_token.type)
+      if token.next_token && !allowed?(token.next_token.type)
         next if last_comma_in_list?(token)
         notify :warning,
                message: "Add space after the comma",
@@ -18,8 +18,8 @@ PuppetLint.new_check(:space_after_comma) do
     tokens.insert(index + 1, PuppetLint::Lexer::Token.new(:WHITESPACE, ' ', 0, 0))
   end
 
-  def whitespace?(type)
-    [:WHITESPACE, :NEWLINE].include?(type)
+  def allowed?(type)
+    [:WHITESPACE, :NEWLINE, :SEMIC].include?(type)
   end
 
   def last_comma_in_list?(token)

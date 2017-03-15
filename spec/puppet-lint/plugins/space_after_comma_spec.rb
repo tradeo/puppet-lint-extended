@@ -17,20 +17,26 @@ RSpec.describe 'space_after_comma' do
     it { expect(problems).to contain_warning(message).on_line(1).in_column(25) }
   end
 
-  context 'wish space after comma' do
+  context 'with space after comma' do
     let(:code) { "'vivid', 'wily'" }
 
     it { expect(problems).to have(0).problems }
   end
 
-  context 'wish trailing comma' do
+  context 'with trailing comma' do
     let(:code) { "'vivid', 'wily'," }
 
     it { expect(problems).to have(0).problems }
   end
 
-  context 'wish new line comma' do
+  context 'with new line after comma' do
     let(:code) { "'vivid',\n'wily',\n'xenial'" }
+
+    it { expect(problems).to have(0).problems }
+  end
+
+  context 'with semicolon after comma' do
+    let(:code) { "'vivid', 'wily', 'xenial',;" }
 
     it { expect(problems).to have(0).problems }
   end
