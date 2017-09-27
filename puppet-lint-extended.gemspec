@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name        = 'puppet-lint-extended'
-  spec.version     = '0.1'
+  spec.version     = '1.0'
   spec.homepage    = 'https://github.com/tradeo/puppet-lint-extended'
   spec.license     = 'MIT'
   spec.author      = 'Tradeo'
@@ -16,10 +16,11 @@ Gem::Specification.new do |spec|
     Extends puppet-lint with additional checks.
   EOF
 
-  spec.add_dependency             'puppet-lint'
+  spec.add_dependency             'puppet-lint', '>= 2.3'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rspec-its'
   spec.add_development_dependency 'rspec-collection_matchers'
   spec.add_development_dependency 'rspec-json_expectations'
   spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'simplecov'
 end
