@@ -15,7 +15,7 @@ PuppetLint.new_check(:space_after_comma) do
 
   def fix(problem)
     index = tokens.index(problem[:token])
-    tokens.insert(index + 1, PuppetLint::Lexer::Token.new(:WHITESPACE, ' ', 0, 0))
+    add_token(index + 1, PuppetLint::Lexer::Token.new(:WHITESPACE, ' ', 0, 0))
   end
 
   def allowed?(type)

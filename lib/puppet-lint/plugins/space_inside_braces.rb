@@ -16,12 +16,12 @@ PuppetLint.new_check(:space_inside_braces) do
   def fix(problem)
     missing_space_after_opening(problem[:token]) do
       index = tokens.index(problem[:token])
-      tokens.insert(index + 1, PuppetLint::Lexer::Token.new(:WHITESPACE, ' ', 0, 0))
+      add_token(index + 1, PuppetLint::Lexer::Token.new(:WHITESPACE, ' ', 0, 0))
     end
 
     missing_space_before_closing(problem[:token]) do
       index = tokens.index(problem[:token])
-      tokens.insert(index, PuppetLint::Lexer::Token.new(:WHITESPACE, ' ', 0, 0))
+      add_token(index, PuppetLint::Lexer::Token.new(:WHITESPACE, ' ', 0, 0))
     end
   end
 

@@ -20,12 +20,12 @@ PuppetLint.new_check(:space_around_operators) do
   def fix(problem)
     missing_space_on_left(problem[:token]) do
       index = tokens.index(problem[:token])
-      tokens.insert(index, PuppetLint::Lexer::Token.new(:WHITESPACE, ' ', 0, 0))
+      add_token(index, PuppetLint::Lexer::Token.new(:WHITESPACE, ' ', 0, 0))
     end
 
     missing_space_on_right(problem[:token]) do
       index = tokens.index(problem[:token])
-      tokens.insert(index + 1, PuppetLint::Lexer::Token.new(:WHITESPACE, ' ', 0, 0))
+      add_token(index + 1, PuppetLint::Lexer::Token.new(:WHITESPACE, ' ', 0, 0))
     end
   end
 

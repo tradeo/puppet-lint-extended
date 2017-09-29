@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
     Extends puppet-lint with additional checks.
   EOF
 
-  spec.add_dependency             'puppet-lint', '>= 2.3'
+  spec.add_dependency             'puppet-lint', '>= 2.3.1'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rspec-its'
   spec.add_development_dependency 'rspec-collection_matchers'
