@@ -1,6 +1,6 @@
 # Change log
 
-## 1.0.0 (2017-12-30)
+## 1.0.1 (2017-12-30)
 
 * Fix false positive in `leading_comment_space`, when the line contains only single # sign.
 
