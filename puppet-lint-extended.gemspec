@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name        = 'puppet-lint-extended'
-  spec.version     = '1.0'
+  spec.version     = '1.0.1'
   spec.homepage    = 'https://github.com/tradeo/puppet-lint-extended'
   spec.license     = 'MIT'
   spec.author      = 'Tradeo'
