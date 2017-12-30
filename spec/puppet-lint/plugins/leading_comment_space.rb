@@ -21,6 +21,12 @@ RSpec.describe 'leading_comment_space' do
     it { expect(problems).to have(0).problems }
   end
 
+  context 'with single #' do
+    let(:code) { "#" }
+
+    it { expect(problems).to have(0).problems }
+  end
+
   context 'with fix enabled' do
     before do
       PuppetLint.configuration.fix = true
